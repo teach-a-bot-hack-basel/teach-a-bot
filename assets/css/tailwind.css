@@ -1,13 +1,17 @@
-/* tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Condensed:wght@300&display=swap');
+
 /******************************************************************************/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* google fonts */
+/******************************************************************************/
+
 /* global */
 /******************************************************************************/
 body {
-  @apply bg-violet-400
+  @apply bg-violet-400 font-sans
 }
 
 

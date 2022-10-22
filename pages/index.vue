@@ -11,6 +11,8 @@
 
 <template>
   <main>
+    <h1 class="font-mono">pixel</h1>
+    <h2>normal</h2>
     <pre>{{ JSON.stringify(Robo, null, 2) }}</pre>
     <pre>obstacles: {{ [...level.obstacles].join(",") }}</pre>
     <div class="w-96 h-32 bg-black relative">

@@ -34,6 +34,7 @@ export class Robot {
   }
 
   jump() {
+    // TODO: climb? up right? prevent jump spam and gliding right over whole level
     this._y++
   }
 }
