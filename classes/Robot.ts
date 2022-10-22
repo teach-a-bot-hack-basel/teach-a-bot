@@ -6,7 +6,7 @@ export class Robot {
   color = ""
 
   _x = 0
-  _y = 0
+  _y: 0 | 1 = 0
 
   _level: Level
 
@@ -19,7 +19,7 @@ export class Robot {
 
   move() {
     // check for obstacle
-    if (!(this._y > 0) && this._level.obstacles.has(this._x + 1)) {
+    if (this._y === 0 && this._level.obstacles.has(this._x + 1)) {
       console.log("cannot move, obstacle in the way")
       return
     }
@@ -27,14 +27,18 @@ export class Robot {
     // move
     this._x++
 
-    // land if possible
-    if ((this._y > 0) && !this._level.obstacles.has(this._x)) {
-      this._y--
+    // fall if possible
+    if ((this._y === 1) && !this._level.obstacles.has(this._x)) {
+      this._y = 0
     }
   }
 
-  jump() {
-    // TODO: climb? up right? prevent jump spam and gliding right over whole level
-    this._y++
+  climb() {
+    // check for obstacle
+    if (this._y === 0 && this._level.obstacles.has(this._x + 1)) {
+      this._y = 1
+    } else {
+      console.log("cannot climb, nothing to climb on")
+    }
   }
 }
