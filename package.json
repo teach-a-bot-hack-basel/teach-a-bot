@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev -o",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "5.3.5",
+    "@types/lodash": "^4.14.182",
+    "autoprefixer": "10.4.8",
+    "nuxt": "3.0.0-rc.11",
+    "postcss": "8.4.18",
+    "prettier": "2.7.1",
+    "prettier-plugin-tailwindcss": "0.1.12",
+    "tailwindcss": "3.1.8"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "remeda": "^1.0.1"
+  }
+}

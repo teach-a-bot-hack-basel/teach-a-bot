@@ -1,0 +1,41 @@
+/* tailwind */
+/******************************************************************************/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global */
+/******************************************************************************/
+
+*,
+::before,
+::after {
+  background: none;
+}
+
+:focus {
+  outline: 0 !important;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+label,
+small,
+input,
+textarea,
+select,
+button {
+  display: block;
+}
+
+button {
+  text-align: left;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}

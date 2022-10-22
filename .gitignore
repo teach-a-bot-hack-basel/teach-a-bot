@@ -1,0 +1,12 @@
+env.json
+.idea
+.vscode
+
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist
