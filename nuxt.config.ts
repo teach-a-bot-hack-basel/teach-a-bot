@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     global: false,
     dirs: [],
   },
+  ssr: false,
   telemetry: false,
   modules: ["@nuxtjs/tailwindcss"],
   experimental: {
