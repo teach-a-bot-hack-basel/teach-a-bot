@@ -1,9 +1,10 @@
-<script>
-console.log('Hello world')
+<script lang="ts" setup>
+import GameView from "~/components/GameView.vue";
+import Controller from "~/components/Controller.vue"
 </script>
-
 <template>
-  <div class="bg-green-500 h-20 w-20">
-    Hello world
+  <div class="flex flex-col aspect-square">
+    <GameView class="flex-grow"/>
+    <Controller class="fixed bottom-0"/>
   </div>
 </template>

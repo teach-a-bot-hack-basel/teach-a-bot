@@ -39,3 +39,8 @@ button,
 select {
   cursor: pointer;
 }
+
+
+.limit {
+  /*@apply */
+}
