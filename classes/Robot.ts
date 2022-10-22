@@ -5,7 +5,7 @@ export class Robot {
     color=''
 
     _x = 0
-    _midAir = false
+    _y = 0
 
     constructor() {
         const proxy = reactive(this)
@@ -21,6 +21,6 @@ export class Robot {
     }
 
     jump() {
-        this._midAir = true
+        this._y++
     }
 }
