@@ -7,5 +7,7 @@
 </script>
 
 <template>
-  <div class="grid"></div>
+  <ul>
+    <li v-for="obst of robo._level.obstacles">{{ obst }}</li>
+  </ul>
 </template>
