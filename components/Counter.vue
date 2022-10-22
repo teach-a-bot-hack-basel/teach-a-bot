@@ -4,5 +4,7 @@
 </script>
 
 <template>
-  <button class="p-4 w-full border" @click="count++">{{ count }}</button>
+
+  <button class="p-4 w-full bg-black border" @click="count++">{{ count }}</button>
+  
 </template>
