@@ -1,26 +1,39 @@
-import {reactive} from "#imports";
+import {reactive} from "#imports"
+import {Level} from "~/classes/Level"
 
 export class Robot {
-    name=''
-    color=''
+  name = ""
+  color = ""
 
-    _x = 0
-    _y = 0
+  _x = 0
+  _y = 0
 
-    constructor() {
-        const proxy = reactive(this)
-        window.Robo = proxy
-        return proxy
+  _level: Level
+
+  constructor(config: { level: Level }) {
+    this._level = config.level
+    const proxy = reactive(this)
+    window.Robo = proxy
+    return proxy
+  }
+
+  move() {
+    // check for obstacle
+    if (!(this._y > 0) && this._level.obstacles.has(this._x + 1)) {
+      console.log("cannot move, obstacle in the way")
+      return
     }
 
-    move() {
-        // TODO: do not increment if blocked
-        // TODO: land if not blocked below
-        this._x++
+    // move
+    this._x++
 
+    // land if possible
+    if ((this._y > 0) && !this._level.obstacles.has(this._x)) {
+      this._y--
     }
+  }
 
-    jump() {
-        this._y++
-    }
+  jump() {
+    this._y++
+  }
 }
