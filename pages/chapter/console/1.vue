@@ -19,8 +19,8 @@
 
 </script>
 <template>
-  <div class="flex flex-col aspect-square">
-    <GameView :robo="robo" class="flex-grow"/>
-    <Controller :robo="robo" class="fixed bottom-0"/>
+  <div class="flex flex-col aspect-square max-w-2xl mx-auto mt-10">
+    <GameView :robo="robo" :resolution="12" class=""/>
+    <Controller :robo="robo" class=""/>
   </div>
 </template>
