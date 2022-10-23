@@ -4,10 +4,6 @@
 </script>
 
 <template>
-    <h2>Hello2
-
-    </h2>
-
-  <button class="p-4 w-full bg-red border" @click="count++">{{ count }}</button>
+  <button class="" @click="count++">{{ count }}</button>
   
 </template>

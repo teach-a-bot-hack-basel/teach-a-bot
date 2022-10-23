@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import {Robot} from "~/classes/Robot"
+import RoboComp from "~/components/RoboComp.vue";
 
 const p = defineProps<{
   robo: Robot,
-  resolution: {
-    type: Number,
-    default: 12,
-  },
+  resolution: Number,
 }>()
 
 // console.log('Robo: ', p.robo);
@@ -14,12 +12,11 @@ const p = defineProps<{
 </script>
 
 <template>
-  <div class="grid aspect-square bg-green-50"
+  <div class="grid aspect-square border-4 border-gray-600 bg-green-200 rounded-lg"
        :style="{gridTemplateColumns: resolution, gridTemplateRows: resolution}">
-    <div
-        class="bg-gray-500"
-        :style="{gridRowStart: resolution - robo._y, gridColumnStart: 1 + robo._x}"
-    ></div>
+
+    <RoboComp class="aspect-square bg-black" :style="{gridRowStart: resolution - robo._y, gridColumnStart: 1 + robo._x}"/>
+
 
     <div v-for="obst of robo._level.obstacles" class="bg-black"
          :style="{gridColumnStart: 1 + obst, gridRowStart: resolution}"/>

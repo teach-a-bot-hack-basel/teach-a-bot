@@ -1,26 +1,36 @@
 <script lang="ts" setup>
-  import GameView from "~/components/GameView.vue"
-  import Controller from "~/components/Controller.vue"
-  import {Robot} from "~/classes/Robot"
-  import {Level} from "~/classes/Level"
-  import {watchEffect} from "#imports"
-  import {useRouter} from "#app"
+import GameView from "~/components/GameView.vue"
+import Controller from "~/components/Controller.vue"
+import {Robot} from "~/classes/Robot"
+import {Level} from "~/classes/Level"
+import {watchEffect} from "#imports"
+import {useRouter} from "#app"
 
-  const router = useRouter()
-  const level = new Level({obstacles: new Set([9, 11, 13]), goal: 14})
-  const robo = new Robot({level})
+const router = useRouter()
+const level = new Level({obstacles: new Set([9, 11, 13]), goal: 14})
+const robo = new Robot({level})
 
-  watchEffect(() => {
-    if (robo._x >= level.goal) {
-      alert('goal reached!')
-      router.push('/chapter/console/3')
-    }
-  })
+watchEffect(() => {
+  if (robo._x >= level.goal) {
+    alert('goal reached!')
+    router.push('/chapter/console/3')
+  }
+})
 
 </script>
 <template>
-  <div class="flex flex-col aspect-square">
-    <GameView :robo="robo" class="flex-grow"/>
-    <Controller :robo="robo" class="fixed bottom-0"/>
+  <div class="flex flex-col aspect-square max-w-xl mx-auto mt-10">
+    <div class="p-10 bg-gray-400">
+      <GameView
+          :robo="robo"
+          :resolution="12"
+      />
+      <Controller
+          :robo="robo"
+          chapter-name="Methods"
+          current-task="1"
+          task-count="4"
+      />
+    </div>
   </div>
 </template>

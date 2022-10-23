@@ -5,9 +5,10 @@ import {Robot} from "~/classes/Robot"
 import {Level} from "~/classes/Level"
 import {watchEffect} from "#imports"
 import {useRouter} from "#app"
+import LayouGameBoy from "~/components/LayouGameBoy.vue";
 
 const router = useRouter()
-const level = new Level({obstacles: new Set([3, 6, 10]), goal: 2})
+const level = new Level({obstacles: new Set([3, 6, 10]), goal: 8})
 const robo = new Robot({level})
 
 watchEffect(() => {
@@ -19,18 +20,21 @@ watchEffect(() => {
 
 </script>
 <template>
-  <div class="flex flex-col aspect-square max-w-2xl mx-auto mt-10">
-    <div class="p-10 bg-gray-400">
-      <GameView
-          :robo="robo"
-          :resolution="12"
-      />
-      <Controller
-          :robo="robo"
-          chapter-name="Methods"
-          current-task="1"
-          task-count="4"
-      />
-    </div>
-  </div>
+  <LayouGameBoy>
+    <GameView
+        :robo="robo"
+        :resolution="12"
+    />
+    <Controller
+        :robo="robo"
+        chapter-name="Methods"
+        current-task="1"
+        task-count="4"
+    >
+      <h2 class="text-5xl font-mono">Aufgabe 1</h2>
+      <article>
+        lorem
+      </article>
+    </Controller>
+  </LayouGameBoy>
 </template>

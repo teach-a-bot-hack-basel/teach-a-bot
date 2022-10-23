@@ -5,8 +5,8 @@ import {Robot} from "~/classes/Robot";
 const p = defineProps<{
   robo: Robot,
   chapterName: String,
-  currentTask: number,
-  taskCount: number
+  currentTask: String,
+  taskCount: String
 }>()
 
 function callFunction(functionName) {
@@ -17,42 +17,23 @@ let RoboMethods = $ref(Object.getOwnPropertyNames(Object.getPrototypeOf(p.robo))
 
 </script>
 <template>
-  <div class="w-full bg-gray-400 flex justify-between pt-4">
-    <div class="grid grid-cols-2 border-2 border-gray-200 p-2 gap-2">
-      <div class="grid grid-rows-2">
-        <div class="bg-red-500 p-2">Chapter</div>
-        <div class="bg-red-500 p-2">{{ chapterName }}</div>
-      </div>
-      <div class="bg-red-500 p-2">
-        {{currentTask}}/{{taskCount}}
+  <div class="w-full bg-stone-400 flex justify-between ali pt-4">
+    <div>
+      <h2 class="text-3xl bg-white p-2 font-mono">Level</h2>
+      <div class="bg-black text-white p-2 ">
+        {{ currentTask }} / {{ taskCount }}
       </div>
     </div>
-    <div class="flex gap-2">
+
+    <div class="grid grid-cols-2 flex-grow p-4 gap-2">
       <button
-          class="p-4 border-2 border-gray-500 rounded-xl flex place-items-center"
           v-for="methode of RoboMethods"
           @click="callFunction(methode)"
       >{{ methode }}
       </button>
     </div>
     <PopUp>
-      <h2 class="text-5xl">Aufgabe 1</h2>
-      <article>
-        The console is a panel that displays important messages, like errors, for developers. Much of the work the
-        computer does with our code is invisible to us by default. If we want to see things appear on our screen, we can
-        print, or log, to our console directly.
-        Definition by: https://www.codecademy.com/
-
-        robo.log('teach-a-bot')
-
-        robo.log(2500)
-
-        1.1 Use the console.log code in the editor to log the Name of your Robo to the console (String).
-        1.2 On the next line, write another console.log to print out the age of your Robo (Number).
-        1.3 Try another Age and another Name.
-
-        Run your code when you are ready to see the result.
-      </article>
+     <slot/>
     </PopUp>
   </div>
 </template>
