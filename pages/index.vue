@@ -1,4 +1,18 @@
 <script setup lang="ts">
+
+const router = useRouter()
+
+let userInput = $ref('')
+
+watchEffect(()=>{
+
+  if(userInput === 'hello' || userInput === 'Hello'){
+
+    router.push('/tutorial/1')
+
+  }
+
+})
 </script>
 
 <template>
@@ -24,7 +38,7 @@
     <div class="sprechblase-code-hallo relative flex justify-center items-center">
       <div class="sprechblase-text text-5xl absolute font-sans pb-10 flex">
         <span> robo.log(' </span>
-        <input class="w-24 text-gray-300" type="text">
+        <input v-model="userInput" class="w-24 text-gray-300" type="text">
         <span> ')</span>
       </div>
       <img
@@ -38,7 +52,7 @@
       to="/tutorial/1"
       class="block anweisung-begrüssung text-2xl text-right font-mono mr-8"
     >
-      type "hello" and start >>
+      type "hello" to start >>
     </RouterLink>
   </div>
 </template>
