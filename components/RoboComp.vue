@@ -5,7 +5,6 @@
 
 <template>
   <div>
-    <img src="~/public/images/robo_ganz_schwebend.svg"></img>
-    
+    <img src="~/public/images/robo_ganz_schwebend.svg"/>
   </div>
 </template>
