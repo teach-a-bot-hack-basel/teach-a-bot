@@ -23,7 +23,7 @@ watchEffect(() => {
 <template>
   <LayouGameBoy>
     <GameView
-        bgSrc="/"
+        bgSrc="/images/hintergrund_desert.png"
         :robo="robo"
         :resolution="12"
     />

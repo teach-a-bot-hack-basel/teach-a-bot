@@ -6,6 +6,7 @@
   import {watchEffect} from "#imports"
   import {useRouter} from "#app"
   import {fn} from "~/functions/fn"
+  import LayouGameBoy from "~/components/LayouGameBoy.vue";
 
   const router = useRouter()
   const level = new Level({obstacles: new Set([4, 8]), goal: 11})
@@ -27,21 +28,34 @@
 
 </script>
 <template>
-  <div class="flex flex-col aspect-square max-w-2xl mx-auto mt-10">
-    <div class="p-10 bg-gray-400">
-      <GameView
+  <LayouGameBoy>
+    <GameView
+        bgSrc="/images/hintergrund_desert.png"
         :robo="robo"
         :resolution="12"
-      />
-      <Controller
+    />
+    <Controller
+        :nextToggle="nextToggle"
+        next-url="/chapter/advanced/1"
         :robo="robo"
         chapter-name="Methods"
         current-task="1"
         task-count="4"
-      />
-    </div>
-  </div>
-  <button class="fixed top-0 right-0 bg-gray-400" @click="solution">run
-    solution
-  </button>
+    >
+      <h2 class="text-5xl font-mono">3. Methods</h2>
+      <article>
+        4.1 Try to go with your Robo and the following Methods through the Parkours. Run your code when you are ready to see the result.
+
+        robo.move()
+
+        robo.climb()
+
+        4.2 Advanced: We give you some examples, but here you can express yourself.
+      </article>
+      <button class="bg-black text-white p-2 font-mono" @click="solution">Run
+        solution ->
+      </button>
+    </Controller>
+  </LayouGameBoy>
+
 </template>
