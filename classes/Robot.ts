@@ -1,10 +1,30 @@
+/*
+version:      v0.3
+main author:  Simon Jaeger
+other authors: 
+              Alexander A, 
+              Amelie Potthast,
+              Bibin Muttappillil, 
+              Julian Vorraro, 
+              Louis Michel,
+              Maxime Vorraro,
+date:         2022 Oct 23
+*/
+
 import {reactive} from "#imports"
 import {Level} from "~/classes/Level"
 
+/*
+@Robot class handling the game logic of our protagonist
+*/
 export class Robot {
   name = ""
-  private _color = ""
 
+  /* 
+  @color property dinamically changes the color of our robot image, 
+  when the user sets the color property
+  */
+  private _color = ""
   get color(){
     return this._color
   }
