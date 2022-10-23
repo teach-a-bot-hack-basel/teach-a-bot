@@ -4,6 +4,9 @@ import {Robot} from "~/classes/Robot";
 
 const p = defineProps<{
   robo: Robot,
+  chapterName: String,
+  currentTask: number,
+  taskCount: number
 }>()
 
 function callFunction(functionName) {
@@ -14,7 +17,16 @@ let RoboMethods = $ref(Object.getOwnPropertyNames(Object.getPrototypeOf(p.robo))
 
 </script>
 <template>
-  <div class="w-full bg-gray-200 h-20 flex justify-between p-6">
+  <div class="w-full bg-gray-400 flex justify-between pt-4">
+    <div class="grid grid-cols-2 border-2 border-gray-200 p-2 gap-2">
+      <div class="grid grid-rows-2">
+        <div class="bg-red-500 p-2">Chapter</div>
+        <div class="bg-red-500 p-2">{{ chapterName }}</div>
+      </div>
+      <div class="bg-red-500 p-2">
+        {{currentTask}}/{{taskCount}}
+      </div>
+    </div>
     <div class="flex gap-2">
       <button
           class="p-4 border-2 border-gray-500 rounded-xl flex place-items-center"
