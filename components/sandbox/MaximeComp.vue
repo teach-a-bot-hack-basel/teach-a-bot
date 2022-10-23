@@ -4,13 +4,15 @@
 
 <template>
 
-    <div>
+
 
      <!--
 <div class="grid grid-cols-3 gap-4">
     <h1 class="text-black font-extrabold text-5xl col-start-2"> teach-a-bot </h1>
 </div> -->
 
+<!--  
+    <div>
         <h1 class="titeltext text-black font-extrabold text-6xl text-center pt-20 font-mono"> teach-a-bot </h1>
 
         <div class="sprechblase-hallo-robo relative"> 
@@ -31,9 +33,11 @@
         </div>
         <div class="anweisung-begrüssung text-2xl text-right font-mono mr-8"> type "hello" to start >> </div>  
 
-    </div>
+    </div> -->
 
 </template>
+
+
 
 
 
