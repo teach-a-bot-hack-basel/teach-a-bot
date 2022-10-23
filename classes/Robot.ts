@@ -3,7 +3,18 @@ import {Level} from "~/classes/Level"
 
 export class Robot {
   name = ""
-  color = ""
+  private _color = ""
+
+  get color(){
+    return this._color
+  }
+
+  set color(value){
+    this._color = value
+    document.getElementById("head").style.fill = this._color
+    document.getElementById("body").style.fill = this._color
+  }
+
 
   _logMsg = ""
   _x = 0
