@@ -6,7 +6,9 @@ const p = defineProps<{
   robo: Robot,
   chapterName: String,
   currentTask: String,
-  taskCount: String
+  taskCount: String,
+  nextToggle: Boolean,
+  nextUrl: String
 }>()
 
 function callFunction(functionName) {
@@ -18,12 +20,18 @@ let RoboMethods = $ref(Object.getOwnPropertyNames(Object.getPrototypeOf(p.robo))
 </script>
 <template>
   <div class="w-full bg-stone-400 flex justify-between ali pt-4">
-    <div>
+    <div class="grid grid-rows-3 gap-2">
       <h2 class="text-3xl bg-white p-2 font-mono">Level</h2>
-      <div class="bg-black text-white p-2 ">
+      <div class="bg-black text-white p-2">
         {{ currentTask }} / {{ taskCount }}
       </div>
+      <router-link v-if="nextToggle" :to="nextUrl">
+        <button class="text-3xl font-mono text-red-500">
+          Next >
+        </button>
+      </router-link>
     </div>
+
 
     <div class="grid grid-cols-2 flex-grow p-4 gap-2">
       <button
@@ -33,7 +41,9 @@ let RoboMethods = $ref(Object.getOwnPropertyNames(Object.getPrototypeOf(p.robo))
       </button>
     </div>
     <PopUp>
-     <slot/>
+      <slot/>
     </PopUp>
   </div>
 </template>
+
+
