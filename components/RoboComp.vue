@@ -4,6 +4,7 @@
 </script>
 
 <template>
-  <button class="" @click="count++">{{ count }}</button>
-  
+  <div>
+    <img src="~/public/images/robo_ganz_schwebend.svg"/>
+  </div>
 </template>

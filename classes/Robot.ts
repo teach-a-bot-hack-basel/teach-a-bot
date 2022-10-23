@@ -23,25 +23,39 @@ export class Robot {
     this._logMsg = msg
   }
 
+  isBlocked(verbose = true) {
+    const check = this._y === 0 && this._level.obstacles.has(this._x + 1)
+    if (verbose) console.log("blocked: " + check)
+    return check
+  }
+
+  isMounted(verbose = true) {
+    const check = this._y === 1 && this._level.obstacles.has(this._x)
+    if (verbose) console.log("mounted: " + check)
+    return check
+  }
+
+  hasReachedGoal() {
+    return this._x >= this._level.goal
+  }
+
   move() {
-    // check for obstacle
-    if (this._y === 0 && this._level.obstacles.has(this._x + 1)) {
+    if (this.isBlocked(false)) {
       console.log("cannot move, obstacle in the way")
       return
     }
 
-    // move
+    console.log('robot moves')
     this._x++
 
-    // fall if possible
-    if ((this._y === 1) && !this._level.obstacles.has(this._x)) {
+    if (!this.isMounted(false)) {
       this._y = 0
     }
   }
 
   climb() {
-    // check for obstacle, then climb
-    if (this._y === 0 && this._level.obstacles.has(this._x + 1)) {
+    if (this.isBlocked(false)) {
+      console.log('robot climbs')
       this._y = 1
       this._x++
     } else {
