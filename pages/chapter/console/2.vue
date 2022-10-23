@@ -7,13 +7,13 @@
   import {useRouter} from "#app"
 
   const router = useRouter()
-  const level = new Level({obstacles: new Set([3, 6, 10]), goal: 2})
+  const level = new Level({obstacles: new Set([9, 11, 13]), goal: 14})
   const robo = new Robot({level})
 
   watchEffect(() => {
     if (robo._x >= level.goal) {
       alert('goal reached!')
-      router.push('/chapter/console/2')
+      router.push('/chapter/console/3')
     }
   })
 
