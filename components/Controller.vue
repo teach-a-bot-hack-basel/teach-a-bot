@@ -19,7 +19,7 @@ let RoboMethods = $ref(Object.getOwnPropertyNames(Object.getPrototypeOf(p.robo))
 
 </script>
 <template>
-  <div class="w-full bg-stone-400 flex justify-between ali pt-4">
+  <div class="w-full bg-stone-400 flex justify-between ali pt-4 gap-4">
     <div class="grid grid-rows-3 gap-2">
       <h2 class="text-3xl bg-white p-2 font-mono">Level</h2>
       <div class="bg-black text-white p-2">
@@ -33,8 +33,8 @@ let RoboMethods = $ref(Object.getOwnPropertyNames(Object.getPrototypeOf(p.robo))
     </div>
 
 
-    <div class="grid grid-cols-2 flex-grow p-4 gap-2">
-      <button
+    <div class="grid grid-cols-2 flex-grow gap-2">
+      <button class="border-4 border-stone-700 rounded-lg text-center font-bold"
           v-for="methode of RoboMethods"
           @click="callFunction(methode)"
       >{{ methode }}

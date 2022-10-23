@@ -5,15 +5,21 @@ import RoboComp from "~/components/RoboComp.vue";
 const p = defineProps<{
   robo: Robot,
   resolution: number,
+  bgSrc?: String,
 }>()
 
 
 </script>
 
 <template>
-  <div class="grid border-4 border-gray-600 bg-green-200 rounded-lg
-grid-rows-[200px_minmax(900px,_1fr)_100px]"
-       :style="{gridTemplateColumns: '1fr '.repeat(resolution), gridTemplateRows: '1fr '.repeat(resolution)}">
+  <div class="
+  grid border-4 border-stone-700
+  rounded-lg grid-rows-[200px_minmax(900px,_1fr)_100px]
+  bg-cover bg-no-repeat"
+       :style="{
+     gridTemplateColumns: '1fr '.repeat(resolution),
+     gridTemplateRows: '1fr '.repeat(resolution),
+     backgroundImage: `url('${bgSrc}')` }">
 
     <RoboComp class="aspect-square"
               :style="{gridRowStart: resolution - robo._y, gridColumnStart: 1 + robo._x}"/>
