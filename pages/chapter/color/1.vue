@@ -23,6 +23,7 @@ watchEffect(() => {
 <template>
   <LayouGameBoy>
     <GameView
+        bgSrc="/images/hintergrund_desert.png"
         :robo="robo"
         :resolution="3"
     />
@@ -39,8 +40,8 @@ watchEffect(() => {
         Try to color our robot :) <br/>
         Try using <br/> <br/>
 
-        Robo.color = "blue" <br/> <br/> 
-        
+        Robo.color = "blue" <br/> <br/>
+
         Can you set color our robot to a green color?
       </article>
     </Controller>

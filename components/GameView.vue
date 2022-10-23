@@ -26,6 +26,7 @@ const p = defineProps<{
 
     <div
         v-for="obst of robo._level.obstacles" class="bg-black aspect-square"
+        style="background-image: url('/images/asset_obstacle.svg')"
         :style="{gridColumnStart: 1 + obst, gridRowStart: resolution}"
     />
 

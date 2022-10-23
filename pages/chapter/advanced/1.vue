@@ -52,10 +52,10 @@
 
         4.2 Advanced: We give you some examples, but here you can express yourself.
       </article>
-      <button class="bg-black text-white p-2 font-mono" @click="solution">Run
-        solution ->
-      </button>
     </Controller>
+    <button class="bg-black text-white p-2 font-mono mt-4 ml-auto mr-12" @click="solution">Run
+      solution ->
+    </button>
   </LayouGameBoy>
 
 </template>

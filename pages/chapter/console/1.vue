@@ -11,7 +11,7 @@ const router = useRouter()
 const level = new Level({obstacles: new Set([10]), goal: 10})
 const robo = new Robot({level})
 
-let nextToggle = $ref(false)
+let nextToggle = $ref(true)
 
 watchEffect(() => {
   if (robo._x >= level.goal) {
@@ -29,7 +29,7 @@ watchEffect(() => {
     />
     <Controller
         :nextToggle="nextToggle"
-        next-url="/chapter/console/2"
+        next-url="/chapter/color/1"
         :robo="robo"
         chapter-name="Methods"
         current-task="1"
