@@ -9,7 +9,7 @@ const p = defineProps<{
   },
 }>()
 
-console.log('Robo: ', p.robo);
+// console.log('Robo: ', p.robo);
 
 </script>
 
